@@ -4,18 +4,14 @@ terraform {
 
   backend "remote" {}
 }
-variable "name" {
-    type = "String"
-}
-
-variable "name" {
-    type = "String"
-}
 
 provider "aws" {
   access_key = "${var.AWS_ACCESS_KEY}"
   secret_key = "${var.AWS_SECRET_KEY}"
   region     = "${var.AWS_REGION}"
+}
+variable "name" {
+    type = "String"
 }
 
 resource "aws_eip_association" "eip_assoc" {
