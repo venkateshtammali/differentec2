@@ -4,6 +4,10 @@ terraform {
 
   backend "remote" {}
 }
+variable "name" {
+    type = "string"
+}
+
 provider "aws" {
   access_key = "${var.AWS_ACCESS_KEY}"
   secret_key = "${var.AWS_SECRET_KEY}"
@@ -18,7 +22,9 @@ resource "aws_instance" "example" {
   ami = "${lookup(var.AMIS, var.AWS_REGION)}"
   instance_type = "t2.micro"
   }
-
+tags = {
+    Name = "${var.name}"
+  }
 resource "aws_eip" "example" {
   vpc = true
   } 
