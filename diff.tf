@@ -5,7 +5,7 @@ terraform {
   backend "remote" {}
 }
 variable "name" {
-    type = "string"
+    type = "String"
 }
 
 provider "aws" {
