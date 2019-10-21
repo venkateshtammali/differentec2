@@ -11,7 +11,7 @@ provider "aws" {
   region     = "${var.AWS_REGION}"
 }
 variable "name" {
-    type = "String"
+    type = "string"
 }
 
 resource "aws_eip_association" "eip_assoc" {
